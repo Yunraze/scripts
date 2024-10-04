@@ -34,6 +34,13 @@ Then open Visual Studio Code, and find these two settings:
  * **Dev > Containers: Docker Socket Path**:
    Set this to `/run/podman/podman.sock`
 
+## Start the `podman` service in user mode
+
+```sh
+systemctl --user start podman.socket
+systemctl --user start podman.service
+```
+
 ## Modifications to `.devcontainer.json`
 
 Typically a `.devcontainer.json` can be as simple as this:
