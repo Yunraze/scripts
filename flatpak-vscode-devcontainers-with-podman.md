@@ -11,6 +11,13 @@ flatpak install com.visualstudio.code.tool.podman
 
 Make sure you have `podman` installed. I think that `qemu` is a dependency for the next phase.
 
+Start the `podman` service in user mode
+
+```sh
+systemctl --user start podman.socket
+systemctl --user start podman.service
+```
+
 Initialize the `podman` machine:
 
 ```sh
@@ -33,13 +40,6 @@ Then open Visual Studio Code, and find these two settings:
 
  * **Dev > Containers: Docker Socket Path**:
    Set this to `/run/podman/podman.sock`
-
-## Start the `podman` service in user mode
-
-```sh
-systemctl --user start podman.socket
-systemctl --user start podman.service
-```
 
 ## Modifications to `.devcontainer.json`
 
